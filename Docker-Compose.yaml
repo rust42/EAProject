@@ -20,6 +20,12 @@ services:
     image: postgres:latest
     ports:
       - "5432:5432"
+    environment:
+      POSTGRES_DB: BlogUser
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+
+
 
 
 
