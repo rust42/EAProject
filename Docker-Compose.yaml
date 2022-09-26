@@ -34,6 +34,8 @@ services:
   post-comments-app:
     build: ./post-comment
     restart: on-failure
+    depends_on:
+      - mysql
     environment:
       DB_HOST: mysql
       DATABASE_NAME: post_comment
@@ -45,13 +47,30 @@ services:
   post-app:
     build: ./EA-Post
     restart: on-failure
+    depends_on:
+      - mysql
     environment:
       DB_HOST: mysql
       DATABASE_NAME: post
       DB_ROOT: root
       DB_PASS: devbinod
+      MINIO_URL: minio
     ports:
       - "8083:8080"
+  minio:
+    image: quay.io/minio/minio
+    ports:
+      - "9000:9000"
+      - "9090:9090"
+    volumes:
+      - ./minio:/data
+    environment:
+      MINIO_ROOT_USER: ea@group10
+      MINIO_ROOT_PASSWORD: ea@group10
+
+
+
+
 
 
 
