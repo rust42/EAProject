@@ -1,0 +1,9 @@
+[submodule "Blog-User"]
+	path = Blog-User
+	url = git@github.com:rust42/Blog-User.git
+[submodule "post-comment"]
+	path = post-comment
+	url = https://github.com/devbinod/post-comment.git
+[submodule "EA-Post"]
+	path = EA-Post
+	url = https://github.com/jenish628/EA-Post.git

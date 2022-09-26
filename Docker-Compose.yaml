@@ -1,0 +1,27 @@
+version: "3.0"
+services:
+  blog_user:
+    build:
+      context: .
+      dockerfile: ./Blog-User/Dockerfile
+    ports:
+      - "8081:8080"
+    depends_on:
+      - postgres
+    environment:
+      POSTGRES_DB: BlogUser
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      APP_PROFILE: prod
+      POSTGRES_HOST: postgres
+
+
+  postgres:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+
+
+
+
+
