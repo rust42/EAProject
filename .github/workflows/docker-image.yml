@@ -21,6 +21,6 @@ jobs:
     - name: Push to dockerhub
       run: docker-compose push
     - name: Setup complete
-      run: Congrats, images pushed to dockerhub !
+      run: echo "Congrats, images pushed to dockerhub !"
 
 
