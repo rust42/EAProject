@@ -21,7 +21,7 @@ services:
 
   blog_user:
     container_name: blog_user
-    image: skoirala/eaproject-bloguser
+    image: skoirala/eaproject-bloguser:${GITHUB_SHA}
     build: ./Blog-User
     ports:
       - "8081:8080"
@@ -36,7 +36,7 @@ services:
 
   post-app:
     container_name: post-app
-    image: skoirala/eaproject-post
+    image: skoirala/eaproject-post:${GITHUB_SHA}
     build: ./EA-Post
     restart: on-failure
     depends_on:
@@ -53,7 +53,7 @@ services:
       - "8082:8080"
 
   post-comments-app:
-    container_name: post-comments-app
+    container_name: post-comments-app:${GITHUB_SHA}
     image: skoirala/eaproject-post-comments
     build: ./post-comment
     restart: on-failure
